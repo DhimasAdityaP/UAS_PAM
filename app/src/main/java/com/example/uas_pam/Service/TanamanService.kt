@@ -24,6 +24,6 @@ interface TanamanService {
         @Body tanaman: Tanaman
     ): Response<Void>
 
-    @DELETE("delete_mahasiswa.php")
+    @DELETE("delete_tanaman.php")
     suspend fun deleteTanaman(@Query("id_tanaman") idTanaman: String): Response<Void>
 }

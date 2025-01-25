@@ -11,7 +11,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -38,7 +37,6 @@ object DestinasiInsert : DestinasiNavigasi {
     override val route = "tanaman_entry"
     override val titleRes = "Tambah Tanaman"
 }
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun EntryTanamanScreen(

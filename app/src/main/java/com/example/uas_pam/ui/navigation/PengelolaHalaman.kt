@@ -3,11 +3,15 @@ package com.example.uas_pam.ui.navigation
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.example.uas_pam.ui.view.HomeView.DestinasiSplash
 import com.example.uas_pam.ui.view.HomeView.Splash
+import com.example.uas_pam.ui.view.Tanaman.DestinasiDetailTanaman
+import com.example.uas_pam.ui.view.Tanaman.DetailTanamanView
 import com.pam.uas_pam.view.DestinasiInsert
 import com.pam.uas_pam.view.EntryTanamanScreen
 import com.pam.uas_pam.view.tanaman.DestinasiTanamanHome
