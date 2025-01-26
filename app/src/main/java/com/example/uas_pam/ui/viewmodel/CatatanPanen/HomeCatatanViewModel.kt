@@ -1,4 +1,4 @@
-package com.example.uas_pam.ui.viewmodel.Pekerja
+package com.example.uas_pam.ui.viewmodel.CatatanPanen
 
 
 import androidx.compose.runtime.getValue
@@ -7,53 +7,51 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import coil.network.HttpException
-import com.example.uas_pam.Model.Pekerja
-import com.example.uas_pam.Model.Tanaman
-import com.example.uas_pam.Repository.PekerjaRepository
-import com.example.uas_pam.Repository.TanamanRepository
+import com.example.uas_pam.Model.CatatanPanen
+import com.example.uas_pam.Repository.CatatanRepository
 import kotlinx.coroutines.launch
 import java.io.IOException
 
-sealed class HomePekerjaUiState {
-    data class Success(val pekerja: List<Pekerja>) : HomePekerjaUiState()
-    data class Error(val message: String) : HomePekerjaUiState() // Add error message
-    object Loading : HomePekerjaUiState()
+sealed class HomeCatatanUiState {
+    data class Success(val catatan : List<CatatanPanen>) : HomeCatatanUiState()
+    data class Error(val message: String) : HomeCatatanUiState() // Add error message
+    object Loading : HomeCatatanUiState()
 }
 
-class HomePekerjaViewModel(private val pekerjaRepository: PekerjaRepository) : ViewModel() {
+class HomeCatatanViewModel(private val catatanRepository: CatatanRepository) : ViewModel() {
 
-    var pekerjaUiState: HomePekerjaUiState by mutableStateOf(HomePekerjaUiState.Loading)
+    var catatanUiState: HomeCatatanUiState by mutableStateOf(HomeCatatanUiState.Loading)
         private set
 
     init {
-        getPekerja()
+        getCatatan()
     }
 
     // Function to get plant data
-    fun getPekerja() {
+    fun getCatatan() {
         viewModelScope.launch {
             safeApiCall(
                 call = {
-                    val pekerjaList = pekerjaRepository.getPekerja()
-                    pekerjaUiState = HomePekerjaUiState.Success(pekerjaList)
+                    val catatanList = catatanRepository.getCatatan()
+                    catatanUiState = HomeCatatanUiState.Success(catatanList)
                 },
                 onError = { errorMessage ->
-                    pekerjaUiState = HomePekerjaUiState.Error(errorMessage)
+                    catatanUiState = HomeCatatanUiState.Error(errorMessage)
                 }
             )
         }
     }
 
     // Function to delete plant by ID
-    fun deletepekerja(idpekerja: String) {
+    fun deletecatatan(idpanen: String) {
         viewModelScope.launch {
             safeApiCall(
                 call = {
-                    pekerjaRepository.deletePekerja(idpekerja)
-                    getPekerja() // Refresh data after deletion
+                    catatanRepository.deleteCatatan(idpanen)
+                    getCatatan() // Refresh data after deletion
                 },
                 onError = { errorMessage ->
-                    pekerjaUiState = HomePekerjaUiState.Error(errorMessage)
+                    catatanUiState = HomeCatatanUiState.Error(errorMessage)
                 }
             )
         }

@@ -39,8 +39,10 @@ object DestinasiSplash : DestinasiNavigasi {
 }
 @Composable
 fun Splash(
-
     onTanamanClick: () -> Unit,
+    onPekerjaClick: () -> Unit,
+    onCatatanPanenClick: () -> Unit,
+    onAktivitasPertanianClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     // State for animation control
@@ -79,6 +81,9 @@ fun Splash(
         ) {
             // Buttons with regular design
             RegularButton(text = "Tanaman", icon = Icons.Filled.Edit, onClick = onTanamanClick)
+            RegularButton(text = "Pekerja", icon = Icons.Filled.Person, onClick = onPekerjaClick)
+            RegularButton(text = "Catatan Panen", icon = Icons.Filled.List, onClick = onCatatanPanenClick)
+            RegularButton(text = "Aktivitas Pertanian", icon = Icons.Filled.ShoppingCart, onClick = onAktivitasPertanianClick)
         }
     }
 }

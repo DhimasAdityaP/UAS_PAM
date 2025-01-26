@@ -8,7 +8,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Delete
-import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.*
@@ -19,13 +18,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.uas_pam.Model.Tanaman
+import com.example.uas_pam.ui.navigation.DestinasiNavigasi
 import com.example.uas_pam.ui.viewmodel.Tanaman.TanamanPenyediaViewModel
 import com.pam.uas_pam.viewmodel.tanaman.HomeTanamanViewModel
 import com.pam.uas_pam.viewmodel.tanaman.HomeUiState
 
-object DestinasiTanamanHome {
-    const val route = "tanaman_home"
-    const val titleRes = "Daftar Tanaman"
+object DestinasiTanamanHome : DestinasiNavigasi {
+    override val route = "home_tanaman"
+    override val titleRes = "list_tanaman"
 }
 
 @OptIn(ExperimentalMaterial3Api::class)

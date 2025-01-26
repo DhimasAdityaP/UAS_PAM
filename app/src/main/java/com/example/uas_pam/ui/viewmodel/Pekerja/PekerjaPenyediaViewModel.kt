@@ -12,14 +12,14 @@ object PekerjaPenyediaViewModel {
         initializer {
             HomePekerjaViewModel(
                 aplikasiPertanian()
-                    .container.tanamanRepository
+                    .container.pekerjaRepository
             )
         }
 
         initializer {
-            InsertTanamanViewModel(
+            InsertPekerjaViewModel(
                 aplikasiPertanian()
-                    .container.tanamanRepository
+                    .container.pekerjaRepository
             )
         }
     }

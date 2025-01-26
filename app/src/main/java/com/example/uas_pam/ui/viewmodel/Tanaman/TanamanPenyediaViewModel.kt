@@ -5,7 +5,6 @@ import androidx.lifecycle.viewmodel.CreationExtras
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.uas_pam.PertanianApplication
-import com.example.uas_pam.TanamanApplication
 import com.pam.uas_pam.viewmodel.InsertTanamanViewModel
 import com.pam.uas_pam.viewmodel.tanaman.HomeTanamanViewModel
 
